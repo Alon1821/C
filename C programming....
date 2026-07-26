@@ -1,0 +1,281 @@
+//program to count odd and even numbers//
+#include <stdio.h>
+  int main() {
+      int arr[5] = {12, 324, 555, 3421, 11};
+      int count = 0;
+      for(int i = 0; i < 5; i++) {
+          if(i %2 == 0) {
+              printf("even number: %d\n", i);
+              count++;
+          }
+             else {
+                 printf("odd numbers: %d \n", i);
+             }
+          }
+             return 0;
+          }
+//Write a C program to find the largest number in an array using pointers.
+#include <stdio.h>
+ int main() {
+     int arr[5];
+     int *p = arr;
+     int i, largest;
+     printf("enter any 5 numbers: \n");
+         for(i = 0; i < 5; i++) {
+             scanf("%d", (p+i));
+         }
+         largest = *p;
+        for(i = 1; i < 5; i++) {
+            if(*(p + i) > largest) {
+                largest = *(p + i);
+            }
+        }
+     printf("Largest number: %d\n", largest);
+     return 0;
+ }
+
+//Reversed array.
+   #include <stdio.h>
+ int main() {
+    int arr[5];
+    int n = 5;
+    int rev[5];
+      printf("enter any 5 digits:\n");
+        for(i = 0; i < 5; i++) {
+            scanf("%d", &arr[i]);
+        }
+        for(i = 0; i < 5; i++) {
+            rev[i] = arr[4 -i];
+        }
+        printf("Reversed array:\n");
+         for(i = 0; i < 5; i++) {
+            printf("%d "), rev[i]);
+                  }
+                return 0;
+          }         
+         # Simple calculator
+          #include <stdio.h>
+           int main() {
+            int price_1, price_2, price_3;
+            int M.p, discount;
+            int total_price;
+    
+            printf("enter any three prices:\n")l
+               scanf("%d %d %d", &price_1, &price_2, &price_3);
+               M.p = price_1 + price_2 + price_3;
+               printf("Marked price: %d\n", M.p);
+               discount = (M.p * 10) / 100;
+              printf("Discount: %d\n", discount);
+              total_price = M.p - discount;
+              printf("Marked price: %d\n", M.p);
+              printf("Discount amount: %d\n", discount);
+            printf("Total price after discount: %d\n", total_pric);
+            return 0;
+           }
+      
+//...///  
+
+
+#include <stdio.h>
+  int main() {
+    int arr[5];
+    int *ptr = arr[5];
+      printf("enter any 5 digits:\n");
+        for(i = 0; i < 5; i++) {
+            scanf("%d", &arr[i]);
+        }
+        printf("Array elements are:\n");
+        for(i = 0; i < 5; i++) {
+            printf("%d\n", *(ptr + i));
+        }
+        return 0;
+  }
+          
+  //passing arguments to function using pointer
+  #include <stdio.h>
+   void getnum(int *arr, int n);
+   int main() {
+       int arr[]= {1, 2, 3, 4, 5};
+       getnum(arr, 5);
+       return 0;
+       
+   }
+   void getnum(int *arr, int n) {
+       for(int i = 0; i < n; i++) {
+           printf("%d \t", arr[i]);
+       }
+       printf("\n");
+   }
+
+#include <stdio.h>
+   int main() {
+       int x;
+       int *ptr;
+       ptr = &x;
+       *ptr = 2;
+       printf("value of x: %d\n", x);
+       printf("*ptr = %d\n", *ptr);
+       
+       *ptr  10;  //adding +10 on value using *ptr
+       printf("value of x: %d\n", x);
+       printf("*ptr = %d\n", *ptr);
+     
+        (*ptr)--;  //decrement invalue using pointer
+        printf("value of x: %d\n", x);
+        printf("*ptr: %d", *ptr);
+        return 0;
+   }
+
+   //pointer to pointer
+   #include <stdio.h>
+   int main() {
+    int b = 10;
+    int *star = &b;
+    int **sstar = &star;
+    printf("value is: %d\n", **sstar);
+    return 0;
+   }
+
+   //pass by value (we pass value with an argument )
+   #include <stdio.h>
+      void cube(int a);
+      int main() {
+        int b = 3;
+        cube(b);
+        printf("cube of:%d\n", b);
+        return 0;
+      }
+      void cube(int a) {
+        a = a * a * a;
+        printf("cube : %d\n", a);
+      }
+
+      //call by reference (we pass address of variable with an argument)
+        #include <stdio.h>
+      void cube(int a);  
+      void _cube(int *a);
+      int main() {
+        //call by value
+        int b = 3;
+        cube(b);
+        printf("%d\n", b); 
+        //call by reference
+        _cube(&b);
+        printf("%d\n", b);
+        return 0;
+      }
+      void cube(int a) {
+        a = a * a * a;
+        printf("%d", a);
+      }
+      void _cube(int *a) {
+        *a = (*a) * (*a) * (*a);
+        printf("%d\n", *a);
+      }
+
+// write a program  in function to find the number of odd numbers in an array.
+      #include <stdio.h>
+   void odd(int arr[], int n);
+   int main() {
+       int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+       odd(arr, 9);
+       return 0;
+   }
+   void odd(int arr[], int n) {
+       int count = 0;
+        for(int i = 0; i < n; i++) {
+            if(arr[i] %2 != 0) { 
+            count++; //increment if the counter is odd
+            }
+            }
+        printf("total odd numbers: %d\n", count);
+   }
+    
+
+   //write a function to reverse an array.
+
+   #include <stdio.h>
+  void reverse(int arr[], int n);
+  int main() {
+    int arr[] = {2, 5, 3, 8, 9};
+    reverse(arr, 5);
+        return 0;
+  }
+   void reverse(int arr[], int n) {
+       int rev[n];
+       for(int i = 0; i < n; i++) {
+           rev[i] = arr[n - i -1];
+       printf(" %d \t", rev[i]);
+       }
+   }
+
+   // odd and even number using array and function.
+  #include <stdio.h> 
+  void getodd(int arr[], int n);
+  int main() {
+      int arr[] = {3, 4, 53, 88, 22};
+      getodd(arr, 5);
+      return 0;
+  }
+void getodd(int arr[], int n) {
+int i;
+  for(i = 0; i < n; i++) {
+      if(arr[i] %2 != 0) {
+          printf("odd number: %d\n", arr[i]);      }
+      else if(arr[i] %2 == 0) {
+          printf("even number: %d\n", arr[i]);    
+      }
+          else {
+         printf("invalid!");
+     }
+  }
+}
+
+//Memory scanner
+#include <stdio.h>
+    void task(int *arr, int a);
+   int main() {
+       int packet[] = {12, 255, 34, 90, 255, 10, 255, 88};
+       int *arr = packet;
+         task(arr, 8);
+         return 0;
+   }
+ void task(int *arr, int a)
+{
+    int count = 0;
+
+    for(int i = 0; i < a; i++)
+    {
+        if(*arr == 255 )
+        {
+            printf("Suspicious Found at index %d\n",i);
+            count++;
+        }
+
+       arr++;
+    }
+
+    printf("Total = %d\n", count);
+}
+
+#include <stdio.h>
+  void memory(int *arr, int a);
+int main() {
+    int packet[] = {23, 24, 2324, 2424, 11, 24, 24, 56, 24};
+     int *arr = packet;
+      memory(arr, 9);
+    return 0;
+}
+void memory(int *arr, int a) {
+    int count = 0;
+    for(int i = 0; i < a; i++) {
+        if(*arr == 24) {
+            printf("Suspicious element is on: %d\n", i);
+            count++;
+        }
+            arr++;
+        }
+    printf("No. if element found: %d\n", count);
+}
+  
+    
